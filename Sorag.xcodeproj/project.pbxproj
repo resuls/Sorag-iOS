@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6318C8BF23EDCA51002DEF79 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318C8BE23EDCA51002DEF79 /* Endpoints.swift */; };
 		63210D6823EDB442008146C6 /* logo_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 63210D6723EDB442008146C6 /* logo_transparent.png */; };
 		632FBF1923EC5F4700D363B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632FBF1823EC5F4700D363B0 /* AppDelegate.swift */; };
 		632FBF1B23EC5F4700D363B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632FBF1A23EC5F4700D363B0 /* SceneDelegate.swift */; };
@@ -16,6 +17,9 @@
 		632FBF2523EC5F4C00D363B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632FBF2323EC5F4C00D363B0 /* LaunchScreen.storyboard */; };
 		632FBF3023EC5F4C00D363B0 /* SoragTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632FBF2F23EC5F4C00D363B0 /* SoragTests.swift */; };
 		632FBF3B23EC5F4C00D363B0 /* SoragUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632FBF3A23EC5F4C00D363B0 /* SoragUITests.swift */; };
+		639ED3A723EE02950093CC37 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639ED3A623EE02950093CC37 /* Login.swift */; };
+		639ED3AE23EE11D10093CC37 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639ED3AD23EE11D10093CC37 /* Spinner.swift */; };
+		639ED3B123EE19DF0093CC37 /* SoragNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639ED3B023EE19DF0093CC37 /* SoragNetworking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6318C8BE23EDCA51002DEF79 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		63210D6723EDB442008146C6 /* logo_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_transparent.png; sourceTree = "<group>"; };
 		632FBF1523EC5F4700D363B0 /* Sorag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sorag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		632FBF1823EC5F4700D363B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +56,9 @@
 		632FBF3623EC5F4C00D363B0 /* SoragUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoragUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		632FBF3A23EC5F4C00D363B0 /* SoragUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoragUITests.swift; sourceTree = "<group>"; };
 		632FBF3C23EC5F4C00D363B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639ED3A623EE02950093CC37 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		639ED3AD23EE11D10093CC37 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		639ED3B023EE19DF0093CC37 /* SoragNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoragNetworking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 		63210D6C23EDB58D008146C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				639ED3A623EE02950093CC37 /* Login.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,7 +97,9 @@
 		63210D6D23EDB592008146C6 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				639ED3AC23EE11C30093CC37 /* Helper */,
 				63210D6F23EDB5AF008146C6 /* Main */,
+				6318C8BE23EDCA51002DEF79 /* Endpoints.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -143,6 +154,7 @@
 		632FBF1723EC5F4700D363B0 /* Sorag */ = {
 			isa = PBXGroup;
 			children = (
+				639ED3AF23EE19C00093CC37 /* Network */,
 				63210D7023EDB5E7008146C6 /* Views */,
 				63210D6E23EDB59B008146C6 /* Assets */,
 				63210D6D23EDB592008146C6 /* Application */,
@@ -169,6 +181,22 @@
 				632FBF3C23EC5F4C00D363B0 /* Info.plist */,
 			);
 			path = SoragUITests;
+			sourceTree = "<group>";
+		};
+		639ED3AC23EE11C30093CC37 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				639ED3AD23EE11D10093CC37 /* Spinner.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		639ED3AF23EE19C00093CC37 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				639ED3B023EE19DF0093CC37 /* SoragNetworking.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,8 +332,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				632FBF1D23EC5F4700D363B0 /* ViewController.swift in Sources */,
+				639ED3AE23EE11D10093CC37 /* Spinner.swift in Sources */,
+				639ED3B123EE19DF0093CC37 /* SoragNetworking.swift in Sources */,
+				639ED3A723EE02950093CC37 /* Login.swift in Sources */,
 				632FBF1923EC5F4700D363B0 /* AppDelegate.swift in Sources */,
 				632FBF1B23EC5F4700D363B0 /* SceneDelegate.swift in Sources */,
+				6318C8BF23EDCA51002DEF79 /* Endpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sorag/Sorag.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KKHQ3KQ9TH;
 				INFOPLIST_FILE = Sorag/Info.plist;
@@ -497,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sorag/Sorag.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KKHQ3KQ9TH;
 				INFOPLIST_FILE = Sorag/Info.plist;

@@ -8,15 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
@@ -44,5 +49,37 @@ class ViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    func login() {
+        let username = usernameTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
+        if !(username.isEmpty || password.isEmpty) {
+            self.showSpinner(onView: self.view)
+            DispatchQueue.main.async {
+                attemptLogin(username: username, password: password) { result in
+                    switch result
+                    {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let token):
+                        print(token)
+                    }
+                    self.removeSpinner()
+                }
+            }
+        }
+    }
+    
+    @IBAction func loginPressed(_ sender: UIButton) {
+        login()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.returnKeyType == .next {
+            passwordTextField.becomeFirstResponder()
+        } else if textField.returnKeyType == .go {
+            login()
+        }
+        return true
+    }
 }
-
