@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63210D6823EDB442008146C6 /* logo_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 63210D6723EDB442008146C6 /* logo_transparent.png */; };
 		632FBF1923EC5F4700D363B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632FBF1823EC5F4700D363B0 /* AppDelegate.swift */; };
 		632FBF1B23EC5F4700D363B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632FBF1A23EC5F4700D363B0 /* SceneDelegate.swift */; };
 		632FBF1D23EC5F4700D363B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632FBF1C23EC5F4700D363B0 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63210D6723EDB442008146C6 /* logo_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_transparent.png; sourceTree = "<group>"; };
 		632FBF1523EC5F4700D363B0 /* Sorag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sorag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		632FBF1823EC5F4700D363B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		632FBF1A23EC5F4700D363B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63210D6C23EDB58D008146C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		63210D6D23EDB592008146C6 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				63210D6F23EDB5AF008146C6 /* Main */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		63210D6E23EDB59B008146C6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				632FBF2123EC5F4C00D363B0 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		63210D6F23EDB5AF008146C6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				632FBF1C23EC5F4700D363B0 /* ViewController.swift */,
+				632FBF1823EC5F4700D363B0 /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		63210D7023EDB5E7008146C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				632FBF1E23EC5F4700D363B0 /* Main.storyboard */,
+				63210D6723EDB442008146C6 /* logo_transparent.png */,
+				632FBF2323EC5F4C00D363B0 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		632FBF0C23EC5F4700D363B0 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +143,11 @@
 		632FBF1723EC5F4700D363B0 /* Sorag */ = {
 			isa = PBXGroup;
 			children = (
-				632FBF1823EC5F4700D363B0 /* AppDelegate.swift */,
+				63210D7023EDB5E7008146C6 /* Views */,
+				63210D6E23EDB59B008146C6 /* Assets */,
+				63210D6D23EDB592008146C6 /* Application */,
+				63210D6C23EDB58D008146C6 /* Models */,
 				632FBF1A23EC5F4700D363B0 /* SceneDelegate.swift */,
-				632FBF1C23EC5F4700D363B0 /* ViewController.swift */,
-				632FBF1E23EC5F4700D363B0 /* Main.storyboard */,
-				632FBF2123EC5F4C00D363B0 /* Assets.xcassets */,
-				632FBF2323EC5F4C00D363B0 /* LaunchScreen.storyboard */,
 				632FBF2623EC5F4C00D363B0 /* Info.plist */,
 			);
 			path = Sorag;
@@ -233,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				632FBF2523EC5F4C00D363B0 /* LaunchScreen.storyboard in Resources */,
+				63210D6823EDB442008146C6 /* logo_transparent.png in Resources */,
 				632FBF2223EC5F4C00D363B0 /* Assets.xcassets in Resources */,
 				632FBF2023EC5F4700D363B0 /* Main.storyboard in Resources */,
 			);
@@ -437,6 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KKHQ3KQ9TH;
 				INFOPLIST_FILE = Sorag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +500,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KKHQ3KQ9TH;
 				INFOPLIST_FILE = Sorag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
