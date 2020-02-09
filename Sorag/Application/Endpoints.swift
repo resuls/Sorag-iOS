@@ -13,5 +13,6 @@ class Endpoints {
     enum API {
         static let login = URL(string: host + "login/")!
         static let logout = URL(string: host + "logout/")!
+        static let users = URL(string: host + "users/")!
     }
 }

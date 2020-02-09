@@ -17,6 +17,9 @@
 		632FBF2523EC5F4C00D363B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632FBF2323EC5F4C00D363B0 /* LaunchScreen.storyboard */; };
 		632FBF3023EC5F4C00D363B0 /* SoragTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632FBF2F23EC5F4C00D363B0 /* SoragTests.swift */; };
 		632FBF3B23EC5F4C00D363B0 /* SoragUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632FBF3A23EC5F4C00D363B0 /* SoragUITests.swift */; };
+		633BEAD223EF9B7500695F38 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BEAD123EF9B7500695F38 /* RegisterViewController.swift */; };
+		633BEAD423EF9C0900695F38 /* InfoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BEAD323EF9C0900695F38 /* InfoMessage.swift */; };
+		633BEAD823EFA9CE00695F38 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BEAD723EFA9CE00695F38 /* Register.swift */; };
 		639ED3A723EE02950093CC37 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639ED3A623EE02950093CC37 /* Login.swift */; };
 		639ED3AE23EE11D10093CC37 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639ED3AD23EE11D10093CC37 /* Spinner.swift */; };
 		639ED3B123EE19DF0093CC37 /* SoragNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639ED3B023EE19DF0093CC37 /* SoragNetworking.swift */; };
@@ -56,6 +59,9 @@
 		632FBF3623EC5F4C00D363B0 /* SoragUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoragUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		632FBF3A23EC5F4C00D363B0 /* SoragUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoragUITests.swift; sourceTree = "<group>"; };
 		632FBF3C23EC5F4C00D363B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		633BEAD123EF9B7500695F38 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		633BEAD323EF9C0900695F38 /* InfoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMessage.swift; sourceTree = "<group>"; };
+		633BEAD723EFA9CE00695F38 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		639ED3A623EE02950093CC37 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		639ED3AD23EE11D10093CC37 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		639ED3B023EE19DF0093CC37 /* SoragNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoragNetworking.swift; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				639ED3A623EE02950093CC37 /* Login.swift */,
+				633BEAD723EFA9CE00695F38 /* Register.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -97,6 +104,7 @@
 		63210D6D23EDB592008146C6 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				633BEAD023EF9B5A00695F38 /* Register */,
 				639ED3AC23EE11C30093CC37 /* Helper */,
 				63210D6F23EDB5AF008146C6 /* Main */,
 				6318C8BE23EDCA51002DEF79 /* Endpoints.swift */,
@@ -183,10 +191,19 @@
 			path = SoragUITests;
 			sourceTree = "<group>";
 		};
+		633BEAD023EF9B5A00695F38 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				633BEAD123EF9B7500695F38 /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		639ED3AC23EE11C30093CC37 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				639ED3AD23EE11D10093CC37 /* Spinner.swift */,
+				633BEAD323EF9C0900695F38 /* InfoMessage.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -334,6 +351,9 @@
 				632FBF1D23EC5F4700D363B0 /* ViewController.swift in Sources */,
 				639ED3AE23EE11D10093CC37 /* Spinner.swift in Sources */,
 				639ED3B123EE19DF0093CC37 /* SoragNetworking.swift in Sources */,
+				633BEAD423EF9C0900695F38 /* InfoMessage.swift in Sources */,
+				633BEAD823EFA9CE00695F38 /* Register.swift in Sources */,
+				633BEAD223EF9B7500695F38 /* RegisterViewController.swift in Sources */,
 				639ED3A723EE02950093CC37 /* Login.swift in Sources */,
 				632FBF1923EC5F4700D363B0 /* AppDelegate.swift in Sources */,
 				632FBF1B23EC5F4700D363B0 /* SceneDelegate.swift in Sources */,

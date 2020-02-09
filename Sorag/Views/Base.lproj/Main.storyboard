@@ -90,6 +90,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="6jB-Qd-3mX" id="DNW-7q-Caz"/>
                         <outlet property="usernameTextField" destination="e8k-Js-tCc" id="TGq-q7-Hc0"/>
+                        <segue destination="nfe-Og-fNu" kind="showDetail" identifier="feed" id="RKa-M0-eT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -99,29 +100,130 @@
         <!--Register-->
         <scene sceneID="YEQ-TT-ent">
             <objects>
-                <viewController title="Register" modalPresentationStyle="fullScreen" id="xmK-dd-KHG" sceneMemberID="viewController">
+                <viewController title="Register" modalPresentationStyle="fullScreen" id="xmK-dd-KHG" customClass="RegisterViewController" customModule="Sorag" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7la-R6-kUA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="1vE-Ja-CRZ">
+                                <rect key="frame" x="107" y="96" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="mTi-hx-kO4"/>
+                                    <constraint firstAttribute="height" constant="200" id="wdo-fU-iVU"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ndQ-kc-qeb">
+                                <rect key="frame" x="57" y="304" width="300" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="HAr-e5-W8D"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="btg-zS-omb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qm1-Ny-8xH">
+                                <rect key="frame" x="57" y="368" width="300" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Jxm-qs-eqs"/>
+                                    <constraint firstAttribute="height" constant="48" id="zc3-re-wDo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7zA-gL-vER">
+                                <rect key="frame" x="57" y="496" width="300" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="VeA-4G-Dve"/>
+                                    <constraint firstAttribute="height" constant="48" id="hET-cT-9mi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="no" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ooq-O2-c1X">
+                                <rect key="frame" x="57" y="560" width="300" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="cS3-Wr-FgA"/>
+                                    <constraint firstAttribute="height" constant="48" id="lLI-r9-dt2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartQuotesType="no" textContentType="family-name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P9Y-sO-LHi">
+                                <rect key="frame" x="57" y="432" width="300" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Saz-rI-BqQ"/>
+                                    <constraint firstAttribute="height" constant="48" id="k5k-dS-Oxu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3p-2Q-dfO">
+                                <rect key="frame" x="164" y="704" width="86" height="41"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleShadowColor" red="0.36378976699999999" green="0.67276781799999996" blue="0.7404683232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerClicked:" destination="xmK-dd-KHG" eventType="touchUpInside" id="DUk-sh-LBs"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BE4-MK-1Qv">
+                                <rect key="frame" x="57" y="624" width="300" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="0mA-ez-zC8"/>
+                                    <constraint firstAttribute="height" constant="48" id="NYv-82-K2S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartQuotesType="no" textContentType="family-name"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1vE-Ja-CRZ" firstAttribute="top" secondItem="Yjc-dJ-3db" secondAttribute="top" constant="8" id="3QF-5p-FIR"/>
+                            <constraint firstItem="l3p-2Q-dfO" firstAttribute="top" secondItem="BE4-MK-1Qv" secondAttribute="bottom" constant="32" id="6qh-xb-R43"/>
+                            <constraint firstItem="P9Y-sO-LHi" firstAttribute="centerX" secondItem="7la-R6-kUA" secondAttribute="centerX" id="Fku-1I-r7m"/>
+                            <constraint firstItem="qm1-Ny-8xH" firstAttribute="centerX" secondItem="7la-R6-kUA" secondAttribute="centerX" id="Jlu-A3-H6T"/>
+                            <constraint firstItem="ooq-O2-c1X" firstAttribute="centerX" secondItem="7la-R6-kUA" secondAttribute="centerX" id="Ks7-ct-A0U"/>
+                            <constraint firstItem="qm1-Ny-8xH" firstAttribute="top" secondItem="ndQ-kc-qeb" secondAttribute="bottom" constant="16" id="OLg-ya-csP"/>
+                            <constraint firstItem="1vE-Ja-CRZ" firstAttribute="centerX" secondItem="7la-R6-kUA" secondAttribute="centerX" id="Uvh-Fb-0ra"/>
+                            <constraint firstItem="l3p-2Q-dfO" firstAttribute="centerX" secondItem="7la-R6-kUA" secondAttribute="centerX" id="WX3-Gp-SCw"/>
+                            <constraint firstItem="7zA-gL-vER" firstAttribute="centerX" secondItem="7la-R6-kUA" secondAttribute="centerX" id="a5T-0t-FrT"/>
+                            <constraint firstItem="7zA-gL-vER" firstAttribute="top" secondItem="P9Y-sO-LHi" secondAttribute="bottom" constant="16" id="aaD-aa-wZk"/>
+                            <constraint firstItem="ooq-O2-c1X" firstAttribute="top" secondItem="7zA-gL-vER" secondAttribute="bottom" constant="16" id="f4G-7u-arg"/>
+                            <constraint firstItem="BE4-MK-1Qv" firstAttribute="top" secondItem="ooq-O2-c1X" secondAttribute="bottom" constant="16" id="ikF-sG-oCe"/>
+                            <constraint firstItem="BE4-MK-1Qv" firstAttribute="centerX" secondItem="7la-R6-kUA" secondAttribute="centerX" id="s78-r5-qYI"/>
+                            <constraint firstItem="ndQ-kc-qeb" firstAttribute="centerX" secondItem="7la-R6-kUA" secondAttribute="centerX" id="toh-M6-DQq"/>
+                            <constraint firstItem="ndQ-kc-qeb" firstAttribute="top" secondItem="1vE-Ja-CRZ" secondAttribute="bottom" constant="8" id="vzD-Mu-1pt"/>
+                            <constraint firstItem="P9Y-sO-LHi" firstAttribute="top" secondItem="qm1-Ny-8xH" secondAttribute="bottom" constant="16" id="zRw-ZT-KyE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Yjc-dJ-3db"/>
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="WZo-bM-H4B"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="P9Y-sO-LHi" id="s2I-wa-T5x"/>
+                        <outlet property="emailTextField" destination="7zA-gL-vER" id="9uT-1g-sVS"/>
+                        <outlet property="firstNameTextField" destination="ooq-O2-c1X" id="NpL-9x-8ua"/>
+                        <outlet property="lastNameTextField" destination="BE4-MK-1Qv" id="s17-hw-637"/>
+                        <outlet property="passwordTextField" destination="qm1-Ny-8xH" id="pRJ-gA-eHJ"/>
+                        <outlet property="usernameTextField" destination="ndQ-kc-qeb" id="a5q-bV-qnD"/>
+                        <segue destination="nfe-Og-fNu" kind="showDetail" identifier="feed" id="wtd-14-wqt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZ2-cV-zyj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="790"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed-->
         <scene sceneID="ak0-I1-nxe">
             <objects>
-                <viewController id="nfe-Og-fNu" sceneMemberID="viewController">
+                <viewController title="Feed" modalPresentationStyle="fullScreen" id="nfe-Og-fNu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gVs-2g-4NC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tUv-Gz-7Q9"/>
                     </view>
+                    <navigationItem key="navigationItem" id="baM-Dm-MSc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okT-vu-ZbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,4 +249,7 @@
     <resources>
         <image name="logo_transparent.png" width="1200" height="1200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wtd-14-wqt"/>
+    </inferredMetricsTieBreakers>
 </document>
