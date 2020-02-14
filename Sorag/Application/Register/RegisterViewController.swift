@@ -39,12 +39,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         lastNameTextField.layer.borderColor = myColor.cgColor
         emailTextField.layer.borderColor = myColor.cgColor
 
-        usernameTextField.layer.borderWidth = 1.0
-        passwordTextField.layer.borderWidth = 1.0
-        confirmPasswordTextField.layer.borderWidth = 1.0
-        firstNameTextField.layer.borderWidth = 1.0
-        lastNameTextField.layer.borderWidth = 1.0
-        emailTextField.layer.borderWidth = 1.0
+        usernameTextField.layer.borderWidth = 0.5
+        passwordTextField.layer.borderWidth = 0.5
+        confirmPasswordTextField.layer.borderWidth = 0.5
+        firstNameTextField.layer.borderWidth = 0.5
+        lastNameTextField.layer.borderWidth = 0.5
+        emailTextField.layer.borderWidth = 0.5
 
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -57,7 +57,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height / 1.5
+                self.view.frame.origin.y -= keyboardSize.height / 3
             }
         }
     }
@@ -70,12 +70,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func login(username: String, password: String) {

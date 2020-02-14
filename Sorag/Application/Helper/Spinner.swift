@@ -11,7 +11,12 @@ import UIKit
 
 var vSpinner : UIView?
 
-extension UIViewController {
+protocol Spinner {
+    func showSpinner(onView : UIView)
+    func removeSpinner()
+}
+
+extension Spinner {
     func showSpinner(onView : UIView) {
         let spinnerView = UIView.init(frame: onView.bounds)
         spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
@@ -34,3 +39,5 @@ extension UIViewController {
         }
     }
 }
+
+extension UIViewController: Spinner {}

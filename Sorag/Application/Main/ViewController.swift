@@ -18,20 +18,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if isLoggedIn() {
-//            DispatchQueue.main.async {
-//                self.performSegue(withIdentifier: "feed", sender: self)
-//            }
-//        }
-        
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         
         let myColor = UIColor(red:0.16, green:0.81, blue:0.94, alpha:1.0)
         usernameTextField.layer.borderColor = myColor.cgColor
         passwordTextField.layer.borderColor = myColor.cgColor
-        usernameTextField.layer.borderWidth = 1.0
-        passwordTextField.layer.borderWidth = 1.0
+        usernameTextField.layer.borderWidth = 0.5
+        passwordTextField.layer.borderWidth = 0.5
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -56,6 +50,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if isLoggedIn() {
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "feed", sender: self)
+            }
+        }
+        
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     

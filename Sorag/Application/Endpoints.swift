@@ -8,11 +8,12 @@
 import Foundation
 
 class Endpoints {
-    private static let host = "http://192.168.0.102:8003/api/v1/"
+    private static let host = "https://sorag-b.herokuapp.com/api/v1/"
     
     enum API {
         static let login = URL(string: host + "login/")!
         static let logout = URL(string: host + "logout/")!
         static let users = URL(string: host + "users/")!
+        static let questions = URL(string: host + "questions/")!
     }
 }
